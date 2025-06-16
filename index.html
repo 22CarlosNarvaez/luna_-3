@@ -3,67 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css   ">
   <title>Bestia libre, corazón noble</title>
   <link rel="icon" href="zoro_no.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
- 
+
 <body>
-<header class="portada">
-  <div class="overlay">
-    <h1 class="titulo">Donde los sueños navegan libres</h1>
+  <header class="portada">
+    <div class="overlay">
+      <h1 class="titulo">Donde los sueños navegan libres</h1>
+    </div>
+    <img src="luffi.jpg" alt="Fondo" class="fondo">
+  </header>
+
+  <div class="invitacion">
+    <button onclick="invitarAComer()">Presiona</button>
+    <p id="mensaje"></p>
+       <!-- Botón oculto por defecto -->
+  <button id="btnWhatsapp" onclick="enviarWhatsapp()" style="display: none; margin-top: 15px;">
+    ¿Aceptas salir conmigo?
+  </button>
+    <div id="corazones"></div>
+
+ 
 
   </div>
-  <img src="luffi.jpg" alt="Fondo" class="fondo">
-</header>
-    <div class="invitacion">
-  <button onclick="invitarAComer()">Presiona</button>
-  <p id="mensaje"></p>
-  <div id="corazones"></div>
-</div>
 
-
-  
-<section class="galeria">
-
-    <!-- Tarjeta 1 -->
+  <section class="galeria">
+    <!-- Zoro -->
     <div class="tarjeta">
       <h1>Zoro</h1>
       <img src="zoro.jpg" alt="Zoro"/>
-      <div class="comentario">Zoro es de esos que no hablan mucho, pero lo dicen todo con una mirada. Se pierde en el camino, pero nunca en su objetivo. Puede estar hecho polvo, sangrando, tirado… pero si prometió algo, lo va a cumplir aunque tenga que arrastrarse con las espadas entre los dientes.</div>
+      <div class="comentario">
+        Zoro es de esos que no hablan mucho, pero lo dicen todo con una mirada.  
+        Se pierde en el camino, pero nunca en su objetivo.  
+        Puede estar hecho polvo, sangrando, tirado…  
+        pero si prometió algo, lo va a cumplir aunque tenga que arrastrarse con las espadas entre los dientes.
+      </div>
     </div>
 
-    <!-- Tarjeta 2 -->
-     
+    <!-- Luffy -->
     <div class="tarjeta">
       <h1>Luffy</h1>
-      <img src="luffy_t2.jpg" alt="Inosuke2"/>
-      <div class="comentario">Luffy puede parecer distraído, impulsivo o incluso ingenuo… pero su corazón entiende lo que otros complican con palabras. Su fuerza no está solo en sus puños, sino en su fe inquebrantable en los sueños, en la amistad y en la libertad. A veces actúa como un niño… pero es ese niño el que inspira a todos a seguir adelante.</div>
+      <img src="luffy_t2.jpg" alt="Luffy"/>
+      <div class="comentario">
+        Luffy puede parecer distraído, impulsivo o incluso ingenuo…  
+        pero su corazón entiende lo que otros complican con palabras.  
+        Su fuerza no está solo en sus puños, sino en su fe inquebrantable en los sueños, en la amistad y en la libertad.  
+        A veces actúa como un niño… pero es ese niño el que inspira a todos a seguir adelante.
+      </div>
     </div>
 
-    <!-- Tarjeta 3 -->
+    <!-- Nami -->
     <div class="tarjeta">
-       <h1>Nami</h1>
-      <img src="nami_t3.jpg" alt="Inosuke 3"/>
-      <div class="comentario">Nami aprendió a confiar cuando ya no le quedaban razones para hacerlo. Su mirada siempre está un paso adelante, calculando rutas, riesgos y corazones. No necesita fuerza bruta para abrirse camino; su mente es el mapa que guía al caos hacia el equilibrio. Y aunque diga que solo le importan las berrys, su lealtad vale más que cualquier tesoro.</div>
+      <h1>Nami</h1>
+      <img src="nami_t3.jpg" alt="Nami"/>
+      <div class="comentario">
+        Nami aprendió a confiar cuando ya no le quedaban razones para hacerlo.  
+        Su mirada siempre está un paso adelante, calculando rutas, riesgos y corazones.  
+        No necesita fuerza bruta para abrirse camino; su mente es el mapa que guía al caos hacia el equilibrio.  
+        Y aunque diga que solo le importan las berrys, su lealtad vale más que cualquier tesoro.
+      </div>
     </div>
 
-
-     <div class="tarjeta">
-       <h1>Sanji</h1>
-      <img src="sanji_t4.jpg" alt="Inosuke 3"/>
-      <div class="comentario">Sanji vive entre el fuego de la cocina y el de la batalla, pero nunca quema lo que de verdad importa: su elegancia, su orgullo y su corazón. Es un caballero que sangra por amor y pelea por respeto. Aunque esconda su dolor detrás de un encendedor y una sonrisa torcida, su mayor fuerza es cuidar, incluso cuando nadie se lo pide.</div>
-        </div>
+    <!-- Sanji -->
+    <div class="tarjeta">
+      <h1>Sanji</h1>
+      <img src="sanji_t4.jpg" alt="Sanji"/>
+      <div class="comentario">
+        Sanji vive entre el fuego de la cocina y el de la batalla,  
+        pero nunca quema lo que de verdad importa: su elegancia, su orgullo y su corazón.  
+        Es un caballero que sangra por amor y pelea por respeto.  
+        Aunque esconda su dolor detrás de un encendedor y una sonrisa torcida, su mayor fuerza es cuidar, incluso cuando nadie se lo pide.
+      </div>
+    </div>
   </section>
+
   <script>
   function invitarAComer() {
     const mensaje = document.getElementById("mensaje");
-    mensaje.textContent = "sqwsd";
-  }
-  
-  function invitarAComer() {
-    const mensaje = document.getElementById("mensaje");
-    mensaje.textContent = "No soy muy bueno con esto, pero… me encantaría invitarte a comer algo. :)";
+    const btnWhatsapp = document.getElementById("btnWhatsapp");
+
+    mensaje.textContent = "Me encantaría invitarte a comer algo. <3";
+
+    // Mostrar el botón de WhatsApp
+    btnWhatsapp.style.display = "inline-block";
 
     // Crear 15 corazones que caen
     for (let i = 0; i < 15; i++) {
@@ -74,13 +98,25 @@
       corazon.style.fontSize = (Math.random() * 20 + 20) + "px";
       document.getElementById("corazones").appendChild(corazon);
 
-      // Borrar después de la animación
+      // Eliminar después de 2 segundos
       setTimeout(() => {
         corazon.remove();
-      }, 2000);
+      }, 4000);
+    }
+  }
+
+  function enviarWhatsapp() {
+    const confirmacion = confirm("¿Quieres salir conmigo a comer? 😳💌");
+
+    if (confirmacion) {
+      const numero = "3178171125"; // 👉 Reemplaza por tu número real
+      const mensaje = "¡Sí! Quiero salir contigo 🐱";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
     }
   }
 </script>
 
-    </body>
-    </html>
+</body>
+</html>
+
