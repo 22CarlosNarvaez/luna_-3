@@ -106,11 +106,11 @@
   }
 
   function enviarWhatsapp() {
-    const confirmacion = confirm("¿Quieres salir conmigo a comer? 😳💌");
+    const confirmacion = confirm("¿Quieres salir conmigo a comer? <3");
 
     if (confirmacion) {
-      const numero = "3178171125"; // 👉 Reemplaza por tu número real
-      const mensaje = "¡Sí! Quiero salir contigo 🐱";
+      const numero = "3178171125";
+      const mensaje = "¡Sí! Quiero salir contigo";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
     }
